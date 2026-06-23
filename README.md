@@ -15,6 +15,12 @@ and no build step**.
 - Each artist page covers their **art style, how they learned, life story,
   highlights, famous works (with links), fun facts, their artworks**, and **why
   kids should get to know them**.
+- **📖 Art Words** — a kid-friendly glossary that explains art styles in depth
+  (Impressionism, Post-Impressionism, Pointillism, Naïve art, Japanese woodblock
+  prints, self-portraits, Surrealism, American Modernism, and contemporary
+  installation art). Each word shows **pictures of the artists** who painted that
+  way and links to them, plus a "handy art words" list (portrait, landscape,
+  still life, en plein air, and more).
 - **🔊 Read to me** button — the browser reads the story aloud for early readers.
 - **▶️ Present mode** — full-screen view; use the **← / → arrow keys** to flip
   between artists like slides. Great for a lesson or projector.
@@ -40,9 +46,10 @@ cleanly.
 
 Artworks are shown for **educational use** with credit to their museums and artists.
 Most images come from [Wikimedia Commons](https://commons.wikimedia.org) and are in
-the **public domain**. A few modern artists' works (Frida Kahlo, Yayoi Kusama,
+the **public domain**. A few modern artists' *artworks* (Frida Kahlo, Yayoi Kusama,
 Georgia O'Keeffe) are still under copyright, so for those we link out to museum pages
-to view them.
+to view them. Their **portrait photos** are shown under free licenses (e.g. CC0 or
+CC BY) with credit on the **For Grown-ups** page.
 
 Pictures load over the internet from Wikimedia Commons. **If a picture can't load**
 (for example, you're offline, or a file name has changed), the site automatically

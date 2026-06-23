@@ -224,9 +224,9 @@ window.ARTISTS = [
       "Make a polka-dot masterpiece! Draw a pumpkin, a flower, or your own name and cover it in dots using markers, paint, or round stickers.",
     ],
     portrait: {
-      file: "",
-      alt: "A portrait of the artist Yayoi Kusama (photo shown on her museum page).",
-      credit: "© Yayoi Kusama — see the link to view photos and art.",
+      file: "Yayoi Kusama circa 2004.jpg",
+      alt: "A close-up photograph of the artist Yayoi Kusama wearing her round glasses and bright lipstick.",
+      credit: "Photo by George Quasha / Wikimedia Commons (CC BY 3.0)",
       sourceUrl: "https://en.wikipedia.org/wiki/Yayoi_Kusama",
     },
     artworks: [
@@ -275,9 +275,9 @@ window.ARTISTS = [
       "Pick one flower (or a picture of one) and draw it SUPER big — so big it fills your whole page. Look closely at every curve and color!",
     ],
     portrait: {
-      file: "",
-      alt: "A portrait of the artist Georgia O'Keeffe (see the link for photos).",
-      credit: "See the link for photos of the artist.",
+      file: "Georgia O'Keeffe MET CT 41512.jpg",
+      alt: "A black-and-white photograph of the artist Georgia O'Keeffe wearing a dark hat.",
+      credit: "Photo by Alfred Stieglitz · The Met / Wikimedia Commons (CC0)",
       sourceUrl: "https://en.wikipedia.org/wiki/Georgia_O%27Keeffe",
     },
     artworks: [
@@ -561,4 +561,115 @@ window.ARTISTS = [
         sourceUrl: "https://en.wikipedia.org/wiki/Bathers_at_Asni%C3%A8res" },
     ],
   },
+];
+
+/* ============================================================
+   Little Artists — ART WORDS (the glossary)
+   ------------------------------------------------------------
+   Big art words like "Impressionism," explained in kid terms.
+   Each one lists the artists who painted that way (by their id)
+   so the page can show their pictures and link to them.
+
+   Fields:
+     id          short nickname (not shown to kids)
+     term        the art word, the way it's shown
+     emoji       a little picture clue
+     kidDef      one short, punchy definition
+     explain     a friendly, in-depth explanation to read aloud
+     artistIds   which artists used this style
+   ============================================================ */
+window.ART_WORDS = [
+  {
+    id: "impressionism",
+    term: "Impressionism",
+    emoji: "🌅",
+    kidDef: "Catching a quick 'impression' of a moment — the light, the colors, the feeling — instead of every tiny detail.",
+    explain:
+      "About 150 years ago in France, a group of artists did something brave. Instead of slowly painting smooth, perfect pictures inside a studio, they grabbed their paints and hurried OUTSIDE! They wanted to capture the way sunlight sparkled on water or danced through the leaves — right at that very moment, before it changed. So they painted fast, using little dabs and dashes of bright color. Up close it can look a bit fuzzy or messy. But step back, and your eyes blend the dabs together into a glowing, sunny scene. People even laughed at the name 'Impressionism' at first — but today it's one of the most loved kinds of art in the whole world!",
+    artistIds: ["cassatt", "morisot", "monet"],
+  },
+  {
+    id: "post-impressionism",
+    term: "Post-Impressionism",
+    emoji: "🌌",
+    kidDef: "What came AFTER Impressionism — keeping the bright colors, but adding big feelings and bold shapes.",
+    explain:
+      "Some artists loved the bright colors the Impressionists used, but they wanted to do even more. Instead of just showing how a moment looked, they used color and thick, swirly brushstrokes to show how it FELT. A night sky could swirl with excitement; a sunflower could glow with pure joy. Because this came right after Impressionism, we call it Post-Impressionism — 'post' is a fancy word for 'after.' The paint is often so thick you can see every bump and swirl!",
+    artistIds: ["vangogh"],
+  },
+  {
+    id: "pointillism",
+    term: "Pointillism",
+    emoji: "🔵",
+    kidDef: "Making a whole picture out of thousands of tiny dots of pure color.",
+    explain:
+      "Imagine painting with the tip of a pencil eraser instead of a brush — one tiny dot at a time! That's Pointillism. Instead of mixing colors together first, the artist places little dots of pure color right next to each other. A dot of blue beside a dot of yellow doesn't turn green on the paper… it turns green in your EYES when you step back! It takes loads of patience — one famous dot-painting took two whole years — but the colors seem to shimmer and glow like magic.",
+    artistIds: ["seurat"],
+  },
+  {
+    id: "naive-art",
+    term: "Naïve Art (Self-Taught)",
+    emoji: "🌿",
+    kidDef: "Art made by someone who never went to art school — simple, honest, and bursting with imagination.",
+    explain:
+      "'Naïve' (say it 'nye-EEV') art is made by artists who taught themselves, with no fancy lessons at all. Their pictures can look flat, simple, or dream-like — almost like a page from a storybook. At first, some people teased these artists for not following the 'rules.' But that's exactly what makes naïve art so special: it comes straight from the imagination, with no rules to slow it down. It reminds us that you don't need a diploma to be a real artist — you just need ideas and the courage to make them!",
+    artistIds: ["rousseau"],
+  },
+  {
+    id: "woodblock-prints",
+    term: "Japanese Woodblock Prints",
+    emoji: "🌊",
+    kidDef: "Pictures carved into wood, brushed with ink, and pressed onto paper — so you can print LOTS of copies.",
+    explain:
+      "Long ago in Japan, artists found a clever way to share one picture with many, many people. First the artist drew a design. Then a carver cut it into a block of wood, leaving the lines sticking up. The block was brushed with ink and pressed onto paper, like a giant stamp — and a different block was carved for every color! These prints are called 'ukiyo-e' (say 'oo-kee-yo-eh'), which means 'pictures of the floating world.' They were so beautiful that when they sailed all the way to Europe, they amazed the artists there — including the Impressionists!",
+    artistIds: ["hokusai"],
+  },
+  {
+    id: "self-portrait",
+    term: "Self-Portraits",
+    emoji: "🪞",
+    kidDef: "A picture an artist makes OF THEMSELVES, usually by looking in a mirror.",
+    explain:
+      "A portrait is a picture of a person. A SELF-portrait is a picture an artist makes of their very own face — usually by peeking in a mirror while they paint. Why do it? Well, the artist is the one model who is always there (and never asks to be paid!). But the best reason is to share who they are and how they feel deep inside. Some artists painted themselves dozens of times, showing every mood and every chapter of their story.",
+    artistIds: ["frida", "vangogh"],
+  },
+  {
+    id: "surrealism",
+    term: "Surrealism (Dream-Like Art)",
+    emoji: "💭",
+    kidDef: "Art that looks like a dream — putting real things together in surprising, magical ways.",
+    explain:
+      "Surrealism is art that feels like stepping right into a dream. Artists mix real things — people, animals, flowers — in ways that could never truly happen, to show feelings, memories, and imagination. (Fun fact: one of our artists is often called a Surrealist, but she said, 'I never painted dreams. I painted my own reality!' — her life really was that colorful and bold.) Surreal art teaches us that what's inside our hearts and heads can be just as real as the world we can see.",
+    artistIds: ["frida"],
+  },
+  {
+    id: "modernism",
+    term: "American Modernism",
+    emoji: "🏜️",
+    kidDef: "A fresh, modern American way of painting — simple shapes, smooth colors, and your own point of view.",
+    explain:
+      "'Modern' art breaks away from the old rules to try something brand new. About 100 years ago, American artists began painting in fresh, modern ways — and one of the most famous made everyday things, like a single flower, look absolutely HUGE and important. Modernism is all about seeing the world your own way and showing it boldly: big simple shapes, smooth glowing colors, and lots of feeling. It whispers, 'Look closer — even small things are amazing.'",
+    artistIds: ["okeeffe"],
+  },
+  {
+    id: "contemporary",
+    term: "Installation & Contemporary Art",
+    emoji: "✨",
+    kidDef: "Art being made RIGHT NOW — and sometimes a whole room you can walk inside!",
+    explain:
+      "'Contemporary' art simply means art made by living artists today — including right now, while you're reading this! It can be a painting, but it can also be a giant sculpture or even a whole ROOM you step inside, which we call an 'installation.' Imagine walking into a dark room lined with mirrors and tiny twinkling lights that seem to go on forever and ever — that's an installation! Contemporary artists love to surprise us, and to let US become part of the art.",
+    artistIds: ["kusama"],
+  },
+];
+
+/* A few more handy words kids will hear — short and sweet. */
+window.ART_TERMS_QUICK = [
+  { term: "Portrait", def: "A picture of a person." },
+  { term: "Landscape", def: "A picture of the outdoors — like fields, mountains, gardens, or the sea." },
+  { term: "Still life", def: "A picture of objects that hold still, like a bowl of fruit or a vase of flowers." },
+  { term: "Canvas", def: "The strong cloth an artist stretches tight and paints on." },
+  { term: "Brushstroke", def: "The mark a paintbrush leaves behind. Some are tiny and smooth; others are thick and swirly." },
+  { term: "En plein air", def: "A French phrase (say 'on plen air') that means 'painting outdoors,' right in front of what you see." },
+  { term: "Easel", def: "The wooden stand that holds a painting up while the artist works." },
+  { term: "Studio", def: "The room or space where an artist makes their art." },
 ];
