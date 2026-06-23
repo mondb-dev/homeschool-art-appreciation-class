@@ -487,7 +487,7 @@ window.ARTISTS = [
       { title: "Fine Wind, Clear Morning (Red Fuji)", year: "c. 1831", sourceUrl: "https://en.wikipedia.org/wiki/Fine_Wind,_Clear_Morning" },
     ],
     funFacts: [
-      "He kept changing his artist name — he used more than 30 different ones!",
+      "Even when he was almost 90, he said he was still learning — he wished he could live to 100 to draw even better!",
       "Look closely at 'The Great Wave' and you'll spot tiny boats and people in the rough sea.",
     ],
     activities: [
