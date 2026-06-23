@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Little Artists — a fun art appreciation adventure for young artists ages 6 to 9. Meet famous painters, see their art, and try it yourself!" />
+  <title>Little Artists 🎨 — Meet the Great Painters!</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+  <!-- Friendly rounded fonts (load when online; system fallback handles offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Top navigation ===== -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="Little Artists home">
+      <span class="brand-emoji" aria-hidden="true">🎨</span>
+      <span class="brand-text">Little Artists</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link" data-view="home">🏠 Home</a>
+      <a href="#gallery" class="nav-link" data-view="gallery">🖼️ Artists</a>
+      <a href="#activities" class="nav-link" data-view="activities">✂️ Activities</a>
+      <a href="#about" class="nav-link" data-view="about">💛 For Grown-ups</a>
+    </nav>
+  </header>
+
+  <!-- ===== Main view container (filled by js/app.js) ===== -->
+  <main id="main" tabindex="-1">
+    <div id="view"><!-- rendered content goes here --></div>
+  </main>
+
+  <footer class="footer">
+    <p>Made with 💛 for young artists. Every painting belongs to its wonderful artist — see <a href="#about">For Grown-ups</a> for picture credits.</p>
+  </footer>
+
+  <!-- Data first, then helpers, then the app -->
+  <script src="data/artists.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
