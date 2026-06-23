@@ -121,8 +121,8 @@ window.ARTISTS = [
       "Go outside and draw a garden, a park, or your backyard. Try quick, light strokes and don't worry about making it perfect — catch the feeling of the sunshine!",
     ],
     portrait: {
-      file: "Berthe Morisot.jpg",
-      alt: "A portrait of the artist Berthe Morisot.",
+      file: "Morisot berthe photo.jpg",
+      alt: "A photograph of the artist Berthe Morisot.",
       credit: "Wikimedia Commons (public domain)",
       sourceUrl: "https://en.wikipedia.org/wiki/Berthe_Morisot",
     },
