@@ -270,6 +270,54 @@ ul.bullets li::before { content: "⭐"; flex: 0 0 auto; }
 .img-fallback .fb-emoji { font-size: 2.6rem; }
 .img-fallback .fb-title { font-size: .95rem; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
 
+/* A little link under an artist's style, pointing to Art Words */
+.style-link { margin: 12px 0 0; }
+.style-link a { font-weight: 700; color: var(--accent); }
+
+/* ===================== Art Words (glossary) ===================== */
+.word-list { display: grid; gap: 20px; }
+.word-card {
+  --accent: var(--purple);
+  background: #fff; border-radius: var(--radius);
+  padding: 22px 26px; box-shadow: var(--shadow-sm);
+  border-top: 10px solid var(--accent);
+}
+.word-card h2 {
+  font-size: 1.7rem; margin: 0 0 10px; color: var(--accent);
+  display: flex; align-items: center; gap: 10px;
+}
+.word-card .word-emoji { font-size: 1.8rem; }
+.word-def { font-weight: 700; font-size: 1.18rem; margin: 0 0 10px; color: var(--ink); }
+.word-explain { margin: 0 0 16px; }
+
+.who-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  border-top: 2px dashed #ececec; padding-top: 14px;
+}
+.who-label { width: 100%; font-weight: 700; color: var(--ink-soft); font-size: 1rem; }
+.who-chip {
+  --accent: var(--purple);
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  background: var(--accent-soft); color: var(--ink); font-weight: 700;
+  border-radius: 999px; padding: 5px 18px 5px 5px;
+  box-shadow: var(--shadow-sm); transition: transform .15s;
+}
+.who-chip:hover { transform: translateY(-3px) rotate(-1deg); }
+.who-pic {
+  width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
+  flex: 0 0 auto; background: var(--accent-soft);
+  box-shadow: inset 0 0 0 3px #fff;
+}
+.who-pic img { width: 100%; height: 100%; object-fit: cover; }
+.who-pic .img-fallback { padding: 0; }
+.who-pic .img-fallback .fb-emoji { font-size: 1.5rem; }
+.who-pic .img-fallback .fb-title { display: none; }
+.who-name { font-size: 1.02rem; }
+
+.quick-list { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 10px; }
+.quick-list li { background: var(--accent-soft); border-radius: var(--radius-sm); padding: 10px 16px; }
+.quick-list strong { color: var(--purple); }
+
 /* ===================== Activities page ===================== */
 .activity-card {
   background: #fff; border-radius: var(--radius); padding: 20px 22px;

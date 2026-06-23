@@ -8,7 +8,11 @@
   "use strict";
 
   const ARTISTS = window.ARTISTS || [];
+  const ART_WORDS = window.ART_WORDS || [];
+  const ART_TERMS_QUICK = window.ART_TERMS_QUICK || [];
   const byId = (id) => ARTISTS.find((a) => a.id === id);
+  const termForArtist = (id) =>
+    ART_WORDS.find((w) => (w.artistIds || []).includes(id));
   const view = document.getElementById("view");
 
   /* Where to load pictures from:
@@ -113,6 +117,7 @@
       '<div class="cta-row">' +
       '<a class="btn" href="#gallery">🖼️ Meet the Artists</a>' +
       '<a class="btn btn-ghost" href="#activities">✂️ Fun Activities</a>' +
+      '<a class="btn btn-ghost" href="#words">📖 Art Words</a>' +
       "</div></section>" +
       '<section class="home-peek"><h2>Tap an artist to begin! 👇</h2>' +
       '<div class="peek-row">' + peeks + "</div></section>"
@@ -215,8 +220,8 @@
       '<div class="read-row">' + readBtn + "</div>" +
       "</div></section>" +
 
-      // art style
-      section("🎨", "Their Art Style", "<p>" + esc(a.style) + "</p>") +
+      // art style (with a link to the matching Art Words entry)
+      section("🎨", "Their Art Style", styleBody(a)) +
       // how they learned
       section("📚", "How They Learned", "<p>" + esc(a.howTheyLearned) + "</p>") +
       // life
@@ -248,6 +253,62 @@
         esc(title) + "</h2>" + body + "</section>"
       );
     }
+
+    function styleBody(artist) {
+      const term = termForArtist(artist.id);
+      const link = term
+        ? '<p class="style-link"><a href="#words">📖 What is ' +
+          esc(term.term) + "? Learn more in Art Words →</a></p>"
+        : "";
+      return "<p>" + esc(artist.style) + "</p>" + link;
+    }
+  }
+
+  function glossaryView() {
+    const cards = ART_WORDS.map((w) => {
+      const arts = (w.artistIds || []).map(byId).filter(Boolean);
+      const accent = (arts[0] && arts[0].themeColor) || "#9b5de5";
+      const chips = arts
+        .map(
+          (a) =>
+            '<a class="who-chip" href="#artist/' + a.id + '"' +
+            ' style="--accent:' + escAttr(a.themeColor) +
+            ";--accent-soft:color-mix(in srgb," + escAttr(a.themeColor) + ' 16%,white)">' +
+            '<span class="who-pic">' + picture(a.portrait, a.emoji, 200) + "</span>" +
+            '<span class="who-name">' + esc(a.name) + "</span></a>"
+        )
+        .join("");
+      return (
+        '<section class="word-card"' +
+        ' style="--accent:' + escAttr(accent) +
+        ";--accent-soft:color-mix(in srgb," + escAttr(accent) + ' 15%,white)">' +
+        '<h2><span class="word-emoji" aria-hidden="true">' + esc(w.emoji) + "</span> " +
+        esc(w.term) + "</h2>" +
+        '<p class="word-def">' + esc(w.kidDef) + "</p>" +
+        '<p class="word-explain">' + esc(w.explain) + "</p>" +
+        (chips
+          ? '<div class="who-row"><span class="who-label">Artists who painted like this 👇</span>' +
+            chips + "</div>"
+          : "") +
+        "</section>"
+      );
+    }).join("");
+
+    const quick = ART_TERMS_QUICK.map(
+      (t) => "<li><strong>" + esc(t.term) + ":</strong> " + esc(t.def) + "</li>"
+    ).join("");
+
+    return (
+      '<div class="page-head"><h1>Art Words 📖</h1>' +
+      '<p>Ever heard a big art word like "Impressionism" and wondered what it means? ' +
+      "Here they are, explained the easy way!</p></div>" +
+      '<div class="word-list">' + cards + "</div>" +
+      (quick
+        ? '<section class="section quick-words">' +
+          '<h2><span class="h2-emoji" aria-hidden="true">🔤</span> More Handy Art Words</h2>' +
+          '<ul class="quick-list">' + quick + "</ul></section>"
+        : "")
+    );
   }
 
   function activitiesView() {
@@ -304,6 +365,8 @@
       "<li>Use the <strong>⬅️ ➡️ arrows</strong> (or your keyboard arrow keys) to move between artists like flipping through slides.</li>" +
       "<li>Tap <strong>▶️ Present</strong> for a big full-screen view that's perfect for a lesson or projector.</li>" +
       "<li>Tap any artwork to see it <strong>bigger</strong>.</li>" +
+      "<li>Visit <strong>📖 Art Words</strong> for kid-friendly explanations of art styles like " +
+      "Impressionism, Pointillism and more — each one shows which artists painted that way.</li>" +
       "</ul>" +
       "<h2>About the pictures</h2>" +
       "<p>Artworks are shown for <strong>educational use</strong> with credit to their museums and artists. " +
@@ -342,6 +405,7 @@
       case "gallery":   html = galleryView(); break;
       case "artist":    html = artistView(arg); activeNav = "gallery"; break;
       case "activities":html = activitiesView(); break;
+      case "words":     html = glossaryView(); break;
       case "about":     html = aboutView(); break;
       case "home":      html = homeView(); break;
       default:          html = notFoundView();
