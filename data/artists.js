@@ -66,8 +66,8 @@ window.ARTISTS = [
       "Draw someone you love doing an everyday thing — reading, brushing hair, or sharing a hug. Use soft, gentle colors like Mary did.",
     ],
     portrait: {
-      file: "Mary Cassatt 1913.jpg",
-      alt: "A photograph of the artist Mary Cassatt.",
+      file: "Mary Cassatt photograph 1913.jpg",
+      alt: "A 1913 photograph of the artist Mary Cassatt seated in a garden.",
       credit: "Wikimedia Commons (public domain)",
       sourceUrl: "https://en.wikipedia.org/wiki/Mary_Cassatt",
     },
